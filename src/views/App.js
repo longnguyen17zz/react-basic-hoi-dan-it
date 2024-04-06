@@ -1,5 +1,7 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import './Example/example.js';
+import Mycomponent from './Example/example.js';
 
 function App() {
   return (
@@ -9,14 +11,15 @@ function App() {
         <p>
           Hello Nguyễn Văn Long
         </p>
-        <a
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
+        <Mycomponent/> 
       </header>
     </div>
   );
