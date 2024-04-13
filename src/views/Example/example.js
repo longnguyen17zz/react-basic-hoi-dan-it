@@ -1,41 +1,35 @@
 import React from 'react';
+import ChildComponent from './ChildComponent';
+import AddComponent from './AddComponent';
 
 class Mycomponent extends React.Component {
     state = {
-        firstName: '',
-        lastname: ''
+        arrJobs: [
+            {id: "job1", title: "Developer", salary: "600"},
+            {id: "job2", title: "Tester", salary: "500"},
+            {id: "job3", title: "Fullstask", salary: "1000"}
+        ]
     };
 
-    handleChangefirstName = (event) => {
+    addNewJob = (job) => {
+        console.log("check", job)
         this.setState({
-            firstName: event.target.value
+            arrJobs: [...this.state.arrJobs,job]
         })
     }
 
-    handleChangelastName = (event) => {
-        this.setState({
-            lastName: event.target.value
-        })
-    }
-
-    handleSubmit = (event) => {
-        event.preventDefault()
-        alert('Successfully')
-    }
-   
 
     render(){
-        
+        console.log("check data call render", this.state )
         return(
-            <form>
-                <label htmlFor="fname">First name:</label><br/>
-                <input type="text" value={this.state.firstName} onChange={(event)=> this.handleChangefirstName(event)}/><br/>
-                <label htmlFor="lname">Last name:</label><br/>
-                <input type="text" value={this.state.lastName} onChange={(event)=> this.handleChangelastName(event)}/><br/><br/>
-                <input type="submit" value="Submit" onClick={(event)=> this.handleSubmit(event)}/>
-            </form> 
-          
-          
+            <>
+                <AddComponent
+                    addNewJob={this.addNewJob}
+                />
+                <ChildComponent
+                    arrJobs={this.state.arrJobs}
+                />           
+            </>
         )
     }
 }
