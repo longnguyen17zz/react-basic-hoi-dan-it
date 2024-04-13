@@ -1,5 +1,5 @@
 import React from 'react';
-
+// Add data vào mảng ban đầu
 class AddComponent extends React.Component {
     state = {
         title: '',
