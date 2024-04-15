@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Demo.css"
 // Class component (stateless)
 class ChildComponent extends React.Component {
     state = {
@@ -22,7 +23,7 @@ class ChildComponent extends React.Component {
         let {showJob} = this.state;
         return(
             <>
-                {showJob === false && <div><button onClick={() => this.handleShowHide()}>Show</button></div>}
+                {showJob === false && <div><button className="btn_show" onClick={() => this.handleShowHide()}>Show</button></div>}
                 {showJob && 
                 <>
                     <div className="job_lists">
@@ -36,7 +37,7 @@ class ChildComponent extends React.Component {
                         })
                     }
                     </div>
-                    <div><button onClick={() => this.handleShowHide()}>Hide</button></div>
+                    <div><button  onClick={() => this.handleShowHide()}>Hide</button></div>
                 </>}
                 
             </>

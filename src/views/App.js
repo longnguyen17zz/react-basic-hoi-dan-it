@@ -2,6 +2,10 @@ import logo from './logo.svg';
 import './App.scss';
 import './Example/example.js';
 import Mycomponent from './Example/example.js';
+// import ListTodo from './Todos/ListTodo.js';
+import ListTodo from './Todos/ListTodo.js';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -9,7 +13,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hello Nguyễn Văn Long
+          Simple Todo Apps with Long
         </p>
         {/* <a
           className="App-link"
@@ -19,8 +23,22 @@ function App() {
         >
           Learn React
         </a> */}
-        <Mycomponent/> 
+        {/* <Mycomponent/>  */}
+        <ListTodo/>
       </header>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        // transition: Bounce,
+      />
     </div>
   );
 }
