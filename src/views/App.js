@@ -7,6 +7,7 @@ import ListTodo from './Todos/ListTodo.js';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ListUser from "./users/ListUser.js";
+import DetailUser from "./users/DetailUser.js";
 
 import Nav from "./Navigation/Nav.js";
 import Home from "./Example/Home.js";
@@ -47,8 +48,11 @@ function App() {
             <Route path="/about">
               <Mycomponent/>
             </Route>
-            <Route path="/user">
+            <Route path="/user" exact>
               <ListUser/>
+            </Route>
+            <Route path="/user/:id">
+              <DetailUser/>
             </Route>
           </Switch>
         </header>
